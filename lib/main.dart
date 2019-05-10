@@ -26,7 +26,7 @@ class SlidingCardApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   Widget _page() => Center(
         child: Text(
-          "Hello world",
+          "Expandable Card",
           style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
         ),
       );
