@@ -3,9 +3,8 @@ import 'package:flutter/rendering.dart';
 
 class ExpandableCard extends StatefulWidget {
   ExpandableCard({
-    @required this.content,
     @required this.children,
-    this.padding = const EdgeInsets.all(15.0),
+    this.padding = const EdgeInsets.only(top: 5, left: 20, right: 20),
     this.minHeight = 100,
     this.maxHeight = 500,
     this.hasShadow = true,
@@ -14,7 +13,6 @@ class ExpandableCard extends StatefulWidget {
     this.hasHandle = true,
   });
 
-  final Widget content;
   final List<Widget> children;
   final EdgeInsetsGeometry padding;
   final double minHeight;
@@ -152,7 +150,6 @@ class _ExpandableCardState extends State<ExpandableCard>
               ),
               child: Padding(
                 padding: widget.padding,
-                // child: widget.content,
                 child: Column(
                   children: <Widget>[
                     if (widget.hasHandle) Handle(),
