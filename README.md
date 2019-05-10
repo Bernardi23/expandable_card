@@ -2,7 +2,7 @@
 
 This is a Flutter Widget that makes it easy to build a page with a bottom Card that can be expanded on user drag.
 
-  ![GIF Animation](https://media.giphy.com/media/834k7TXTK6AQCaeZk6/giphy.gif)
+  ![GIF Animation](https://media.giphy.com/media/1xoZG7PVqcTtNdBS3k/giphy.gif)
   
 ## How to use it
 
