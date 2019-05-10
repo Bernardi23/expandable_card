@@ -19,8 +19,10 @@ This is a Flutter Widget that makes it easy to build a page with a bottom Card t
 - `bool hasShadow`: determines whether the card has box shadow or not. Default is `true`
 - `Color backgroundColor`: background color of the card. Default is `Colors.blueGrey`
 - `bool hasRoundedCorners`: determines whether the card has rounded corners or not. Default is `false`
-- `Widget content`: The actual content of the card
+- `bool hasHandle`: will add a little handle icon. Default is `true`
+- `List<Widget> Children`: Widgets that make the actual content of the card
 
 ## Future Implementations:
 - `AnimatedExpandableCard`: will allow animation between closed state and expanded state.
+- Add suport for scrolling card when its fully expanded
     

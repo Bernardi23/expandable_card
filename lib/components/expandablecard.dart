@@ -2,22 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class ExpandableCard extends StatefulWidget {
-  ExpandableCard(
-      {@required this.content,
-      this.padding = const EdgeInsets.all(15.0),
-      this.minHeight = 100,
-      this.maxHeight = 500,
-      this.hasShadow = true,
-      this.backgroundColor = Colors.blueGrey,
-      this.hasRoundedCorners = false});
+  ExpandableCard({
+    @required this.content,
+    @required this.children,
+    this.padding = const EdgeInsets.all(15.0),
+    this.minHeight = 100,
+    this.maxHeight = 500,
+    this.hasShadow = true,
+    this.backgroundColor = Colors.blueGrey,
+    this.hasRoundedCorners = false,
+    this.hasHandle = true,
+  });
 
   final Widget content;
+  final List<Widget> children;
   final EdgeInsetsGeometry padding;
   final double minHeight;
   final double maxHeight;
+  final bool hasHandle;
   final bool hasShadow;
-  final Color backgroundColor;
   final bool hasRoundedCorners;
+  final Color backgroundColor;
 
   @override
   _ExpandableCardState createState() => _ExpandableCardState();
@@ -147,8 +152,14 @@ class _ExpandableCardState extends State<ExpandableCard>
               ),
               child: Padding(
                 padding: widget.padding,
-                child: widget.content,
-                // child: positionDebugContent,
+                // child: widget.content,
+                child: Column(
+                  children: <Widget>[
+                    if (widget.hasHandle) Handle(),
+                    SizedBox(height: 10),
+                    ...widget.children
+                  ],
+                ),
               ),
             ),
           ),
@@ -161,5 +172,16 @@ class _ExpandableCardState extends State<ExpandableCard>
   void dispose() {
     _animationController.dispose();
     super.dispose();
+  }
+}
+
+class Handle extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Icon(
+      Icons.remove,
+      color: Colors.white30,
+      size: 45,
+    );
   }
 }
