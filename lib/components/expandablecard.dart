@@ -112,7 +112,9 @@ class _ExpandableCardState extends State<ExpandableCard>
       setState(() {
         _scrollPercent = 1.0;
         _cardIsExpanded = true;
-        widget.isExpandedCallback(_cardIsExpanded);
+        if(widget.isExpandedCallback != null) {
+          widget.isExpandedCallback(_cardIsExpanded);
+        }
       });
 
     } else if (_cardIsExpanded &&
@@ -126,7 +128,9 @@ class _ExpandableCardState extends State<ExpandableCard>
       setState(() {
         _scrollPercent = 0.0;
         _cardIsExpanded = false;
-        widget.isExpandedCallback(_cardIsExpanded);
+        if(widget.isExpandedCallback != null) {
+          widget.isExpandedCallback(_cardIsExpanded);
+        }
       });
 
     } else if (widget.closeCardCallback != null && (!_cardIsExpanded && details.primaryVelocity > 200 || _scrollPercent < -0.15)) {
