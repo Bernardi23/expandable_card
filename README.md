@@ -20,6 +20,9 @@ This is a Flutter Widget that makes it easy to build a page with a bottom Card t
 - `Color backgroundColor`: background color of the card. Default is `Colors.blueGrey`
 - `bool hasRoundedCorners`: determines whether the card has rounded corners or not. Default is `false`
 - `bool hasHandle`: will add a little handle icon. Default is `true`
+- `Color handleColor`: changes color of the handle icon. Default is `Colors.white`
+- `Function isExpandedCallback`: optional callback to notify parent of card state. Will call method and pass a boolean. Default is `null`
+- `Function closeCardCallback`: optional callback to handle swiping down to close. If null, card cannot be swiped down. Default is `null`
 - `List<Widget> Children`: Widgets that make the actual content of the card
 
 ## Future Implementations:
